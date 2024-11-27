@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #c8d6e5;
+}
+
+
+
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;
+    display: block;
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+input,
+button{
+    padding: 8px;
+}
+
+button {
+    background-color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+}
+ol{
+    margin: 10px;
+    font-weight: bolder;
+    height: 20px;
+    list-style-type: none;
+    justify-content: center;
+    justify-items: center;
+    cursor: pointer;
+    height: 300px;
+    counter-reset: my-counter;
+}
+
+.riscado {
+    text-decoration: line-through;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
