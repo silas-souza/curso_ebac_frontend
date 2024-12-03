@@ -1,18 +1,19 @@
 $(document).ready(function () {
     $('#carousel-imagens').slick({
-        autoplay: true
+        autoplay: true,
+        arrows: false
     });
 
 $('#telefone').mask('(00) 00000-0000', {
-    placeholder: '(DDD) 12345-6789'
+    placeholder: '(00) 00000-0000'
 });
 $('#cpf').mask('000.000.000-00', {
-    placeholder: '123.456.789-00'
+    placeholder: '000.000.000-00'
 });
 $('#cep').mask('00000-000', {
-    placeholder: '012345-678'
+    placeholder: '000000-000'
 });
-$('#form-campo').validate({
+$('form').validate({
     rules: {
         nome: {
             required: true,
@@ -34,14 +35,26 @@ $('#form-campo').validate({
             required: true
         },
         messages: {
-            nome: 'Por favor, insira seu nome completo!'
+            nome: 'Por favor, insira seu nome completo!',
+            email: 'Por favor, insira um email válido',
+            telefone: 'Por favor, insira um telefone válido',
+            endereco: 'Por favor, insira um endereço válido',
+            cep: 'Por favor, insira um CEP válido',
+            
         },
     },
-    submitHandler: function (form) {
-        alert("Sua requisição foi enviada para análise, parabéns pela aquisição!");
+    
+    submitHandler: function(form) {
+        alert("Sua requisição foi enviada para análise, parabéns pela aquisição!")
     },
-    invalidHandler: function (form, validator) {
-        alert("Por favor, preencha os campos para prosseguir com a compra!");
-    }
+    invalidHandler: function(evento, validador) {
+        let camposIncorretos = validador.numberOfInvalids()
+        if (camposIncorretos) {
+            alert(`Existem ${camposIncorretos} campos incorretos`)
+    }},
 })
 })
+        $('input[type="submit"]').click(function() {
+        $('form').submit();
+        })
+
